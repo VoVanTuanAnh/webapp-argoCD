@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+
+metadata:
+  name: api-email
+  namespace: demo
+
+spec:
+  route:
+    receiver: email
+
+  receivers:
+  - name: email
+    emailConfigs:
+    - to: vovantuananh040103@gmail.com
+      from: vovantuananh040103@gmail.com
+      smarthost: smtp.gmail.com:587
+      authUsername: vovantuananh040103@gmail.com
+
+      authPassword:
+        name: alertmanager-email
+        key: password
+
+      requireTLS: true
