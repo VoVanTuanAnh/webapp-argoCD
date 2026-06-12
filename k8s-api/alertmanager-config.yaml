@@ -8,6 +8,10 @@ metadata:
 spec:
   route:
     receiver: email
+    groupBy: ['alertname']
+    matchers:
+      - name: namespace
+        value: demo
 
   receivers:
   - name: email

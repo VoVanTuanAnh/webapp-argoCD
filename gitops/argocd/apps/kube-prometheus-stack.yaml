@@ -17,6 +17,13 @@ spec:
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false
+            ruleNamespaceSelector: {}
+            ruleSelector: {}
+
+        alertmanager:
+          alertmanagerSpec:
+            alertmanagerConfigNamespaceSelector: {}
+            alertmanagerConfigSelector: {}
 
   destination:
     server: https://kubernetes.default.svc
